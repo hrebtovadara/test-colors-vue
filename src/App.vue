@@ -1,32 +1,68 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <div></div>
+        <header-colors/>
+        <router-view/>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+    import HeaderColors from '../src/components/HeaderColors.vue'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+    export default {
+        data() {
+            return {}
+        },
+        components: {
+            HeaderColors
+        }
     }
-  }
-}
+</script>
+
+<style lang="scss">
+
+    * {
+        font-family: Inter, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 21px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #1F2020;
+        margin: 0;
+
+    }
+
+    *:link {
+        text-decoration: none;
+    }
+
+    * button {
+        border: none;
+        background-color: transparent;
+    }
+
+    .blur {
+        position: absolute;
+        content: '';
+        background-color: #000;
+        opacity: 0.7;
+        width: 100%;
+        height: 2000px;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .visually-hidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        clip-path: inset(100%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
 </style>
